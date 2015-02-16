@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Pinyto Desktop Todo
+_Comment=PinytoDesktopTodo application
+Categories=GNOME;Utility;
+Exec=pinyto-desktop-todo
+Icon=pinyto-desktop-todo
+Terminal=false
+Type=Application

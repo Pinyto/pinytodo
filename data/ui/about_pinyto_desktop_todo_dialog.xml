@@ -1,0 +1,9 @@
+<glade-catalog name="about_pinyto_desktop_todo_dialog" domain="glade-3" 
+               depends="gtk+" version="1.0">
+  <glade-widget-classes>
+    <glade-widget-class title="About Pinyto Desktop Todo Dialog" name="AboutPinytoDesktopTodoDialog" 
+                        generic-name="AboutPinytoDesktopTodoDialog" parent="GtkAboutDialog"
+                        icon-name="widget-gtk-about-dialog"/>
+  </glade-widget-classes>
+
+</glade-catalog>

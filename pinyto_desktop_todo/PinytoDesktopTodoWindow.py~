@@ -1,0 +1,34 @@
+# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
+### BEGIN LICENSE
+# This file is in the public domain
+### END LICENSE
+
+from locale import gettext as _
+
+from gi.repository import Gtk # pylint: disable=E0611
+import logging
+logger = logging.getLogger('pinyto_desktop_todo')
+
+from pinyto_desktop_todo_lib import Window
+from pinyto_desktop_todo.AboutPinytoDesktopTodoDialog import AboutPinytoDesktopTodoDialog
+from pinyto_desktop_todo.PreferencesPinytoDesktopTodoDialog import PreferencesPinytoDesktopTodoDialog
+
+# See pinyto_desktop_todo_lib.Window.py for more details about how this class works
+class PinytoDesktopTodoWindow(Window):
+    __gtype_name__ = "PinytoDesktopTodoWindow"
+    
+    def finish_initializing(self, builder): # pylint: disable=E1002
+        """Set up the main window"""
+        super(PinytoDesktopTodoWindow, self).finish_initializing(builder)
+
+        self.AboutDialog = AboutPinytoDesktopTodoDialog
+        self.PreferencesDialog = PreferencesPinytoDesktopTodoDialog
+
+        # Code for other initialization actions should be added here.
+        self.AddButton = self.builder.get_object("AddButton")
+        self.toolbar = self.builder.get_object("toolbar")
+        self.toolbar.get_style_context().add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
+        self.ItemList = self.builder.get_object("ItemList")
+
+    def on_AddButton_clicked(self, widget):
+        print(self.ItemList.get_children()[0].get_child())
